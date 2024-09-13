@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개서 피드백 결과</title>
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+    <div class="top-line"></div>
+    
+    <!-- 우측 상단에 버튼 배치 -->
+    <div class="top-buttons">
+        <button id="go-back">초기화면으로<br> 돌아가기</button>
+        <button id="save-feedback">저장하기</button>
+    </div>
+
+    <div class="split-container">
+        <!-- 왼쪽: 원본 자기소개서 -->
+        <div class="left-side">
+            <div class="left-title">자기소개서</div>
+            <div class="container original-border">
+                <div class="form-group">
+                    <label for="job">[지원 직무]</label>
+                    <p id="job"></p>
+                </div>
+                <div class="form-group">
+                    <label for="question">[자기소개서 문항]</label>
+                    <p id="question"></p>
+                </div>
+                <div class="form-group">
+                    <label for="answer">[자기소개서 답변]</label>
+                    <p id="answer"></p>
+                </div>
+            </div>
+        </div>
+        <!-- 오른쪽: 개선점 -->
+        <div class="right-side">
+            <div class="right-title">Gemma2의 조언</div>
+            <div class="feedback-container">
+                <div class="container feedback-border">
+                    <div class="form-group">
+                        <label for="feedback">[개선점]</label>
+                        <p id="feedback"></p>
+                    </div>
+                </div>
+                <!-- 복사 버튼 추가 -->
+                 <br>
+                <button id="copy-feedback">피드백 복사</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-line"></div>
+
+    <script src="result.js"></script>
+</body>
+</html>

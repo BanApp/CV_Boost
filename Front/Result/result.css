@@ -1,0 +1,200 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+}
+
+.top-line, .bottom-line {
+    width: 100%;
+    height: 12px;
+    background-color: #4d6bff;
+    animation: growLine 1s ease-in-out;
+}
+
+.split-container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    background: linear-gradient(100deg, #ffffff 50%, #4d6bff 50%);
+    padding: 20px; /* 화면에 여백 추가 */
+    box-sizing: border-box;
+}
+
+.left-side, .right-side {
+    width: 50%;
+    height: 700px; /* 고정된 높이 */
+    overflow: auto; /* 내용이 넘칠 경우 스크롤바 추가 */
+    padding: 20px; /* 콘텐츠 여백 추가 */
+    box-sizing: border-box; /* 패딩을 너비 계산에 포함시킴 */
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* 수직 중앙 정렬 */
+    padding: 0; /* 추가 여백 제거 */
+}
+
+.left-title, .right-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 480px;
+    width: 100%;
+    background-color: #ffffff;
+    overflow-y: auto; /* 수직 스크롤바 추가 */
+    max-height: calc(100vh - 80px); /* 상단 및 하단 여백 고려 */
+    box-sizing: border-box; /* 패딩을 너비 계산에 포함시킴 */
+    animation: fadeIn 1s ease-in;
+}
+
+/* 원본 자기소개서 컨테이너 스타일 */
+.left-side .container {
+    border: 3px solid #4d6bff;
+}
+
+/* 피드백 컨테이너 스타일 */
+.right-side .container {
+    border: 3px solid #000000; /* 검정색 테두리 */
+    position: relative; /* 버튼을 컨테이너의 상대적 위치에 배치 */
+    padding-bottom: 40px; /* 버튼과 컨테이너 사이의 간격 */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px; /* 제목 크기 조정 */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #000;
+}
+
+.form-group p {
+    margin: 0; /* 기본 여백 제거 */
+    color: #333;
+    word-wrap: break-word; /* 긴 단어를 줄 바꿈 */
+    overflow-wrap: break-word; /* 긴 단어를 줄 바꿈 */
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    background-color: #ffffff; /* 흰색 배경 */
+    color: #4d6bff; /* 파란색 텍스트 */
+    border: 2px solid #000000; /* 검정색 테두리 */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #f0f0f0; /* 호버 시 배경색 변경 */
+    color: #3a56d0; /* 호버 시 텍스트 색상 변경 */
+    border-color: #333333; /* 호버 시 테두리 색상 변경 */
+    transform: translateY(-3px);
+}
+
+button:active {
+    background-color: #e0e0e0; /* 클릭 시 배경색 변경 */
+    color: #2a49b9; /* 클릭 시 텍스트 색상 변경 */
+    border-color: #000000; /* 클릭 시 테두리 색상 변경 */
+    transform: translateY(1px);
+}
+
+.top-buttons {
+    position: absolute;
+    top: 20px; /* 버튼을 조금 내림 */
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000; /* 다른 요소들 위에 표시되도록 함 */
+}
+
+.top-buttons button {
+    padding: 10px 15px;
+    background-color: #ffffff; /* 흰색 배경 */
+    color: #000000; /* 검정색 텍스트 */
+    border: 2px solid #000000; /* 검정색 테두리 */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.top-buttons button:hover {
+    border-color: #333333; /* 호버 시 테두리 색상 변경 */
+    color: #4d6bff; /* 호버 시 텍스트 색상 변경 */
+}
+
+.top-buttons button:active {
+    background-color: #e0e0e0; /* 클릭 시 배경색 변경 */
+    border-color: #000000; /* 클릭 시 테두리 색상 변경 */
+}
+
+/* 복사 버튼 스타일 */
+#copy-feedback {
+    position: absolute;
+    padding: 8px 12px;
+    right: 170px; /* 컨테이너의 오른쪽에서 20px 떨어지게 설정 */
+    background-color: #ffffff; /* 흰색 배경 */
+    color: #000000; /* 파란색 텍스트 */
+    border: 2px solid #000000; /* 검정색 테두리 */
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#copy-feedback:hover {
+    background-color: #f0f0f0; /* 호버 시 배경색 변경 */
+    color: #4d6bff; /* 호버 시 텍스트 색상 변경 */
+    border-color: #333333; /* 호버 시 테두리 색상 변경 */
+}
+
+#copy-feedback:active {
+    background-color: #e0e0e0; /* 클릭 시 배경색 변경 */
+    color: #4d6bff; /* 클릭 시 텍스트 색상 변경 */
+    border-color: #000000; /* 클릭 시 테두리 색상 변경 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes growLine {
+    from { width: 0; }
+    to { width: 100%; }
+}

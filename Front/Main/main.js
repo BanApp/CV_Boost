@@ -6,9 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const question = document.getElementById("question").value;
         const answer = document.getElementById("answer").value;
 
+        // 로딩 오버레이 표시
+        document.getElementById("loading-overlay").style.display = "flex";
+
         try {
             // 데이터를 백그라운드에서 전송
-            const response = await fetch('http://localhost:8000/api/submit', {  // FastAPI 서버의 엔드포인트
+            const response = await fetch('http://localhost:8000/api/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -12,7 +12,7 @@ body {
 
 .top-line, .bottom-line {
     width: 100%;
-    height: 12px;
+    height: 1.5%; /* 12px을 화면 비율에 맞게 변경 */
     background-color: #4d6bff;
     animation: growLine 1s ease-in-out;
 }
@@ -49,24 +49,24 @@ body {
 
 .animated-image {
     max-width: 80%;
-    max-height: 60%; /* 이미지를 위로 올리기 위해 높이 조정 */
-    margin-bottom: 50px; /* 이미지와 텍스트 사이의 간격 */
+    max-height: 50%; /* 60%에서 줄임 */
+    margin-bottom: 8%; /* 50px -> 비율로 변경 */
     animation: moveImage 3s ease-in-out infinite;
 }
 
 .service-description {
-    font-size: 32px;
+    font-size: 3vw; /* 32px을 화면 비율에 맞게 변경 */
     font-weight: bold;
-    color: #000; /* 검정색 텍스트 */
-    margin-top: 10px;
+    color: #000;
+    margin-top: 0%; /* 10px -> 비율로 변경 */
 }
 
 .additional-info {
-    font-size: 24px;
+    font-size: 1.5vw; /* 24px을 화면 비율에 맞게 변경 */
     font-weight: bold;
-    color: #333; /* 짙은 회색 텍스트 */
-    margin-top: 10px;
-    line-height: 1.5; /* 줄 높이 조정 */
+    color: #333;
+    margin-top: 3%;
+    line-height: 1.5;
 }
 
 .right-side {
@@ -76,73 +76,75 @@ body {
 }
 
 .container {
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 480px;
-    width: 100%;
-    background-color: #ffffff; /* 하얀색 배경 */
+    padding: 3% 5%; /* 20px 30px을 비율로 변경 */
+    border-radius: 1%; /* 10px -> 비율 */
+    box-shadow: 0 0.4vw 1.25vw rgba(0, 0, 0, 0.1); /* 0 4px 10px */
+    max-width: 40vw; /* 480px -> 비율 */
+    width: 60%;
+    background-color: #ffffff;
     animation: fadeIn 1s ease-in;
 }
 
 h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 3%;
 }
 
 .form-group {
-    margin-bottom: 20px; /* 폼 그룹 사이의 간격을 늘림 */
+    margin-bottom: 3%;
 }
 
 .form-group label {
     display: block;
     font-weight: bold;
-    margin-bottom: 10px; /* 레이블과 입력 사이의 간격을 늘림 */
+    margin-bottom: 2%;
     color: #555;
 }
 
 .form-group input,
 .form-group textarea {
-    width: calc(100% - 20px); /* 입력 폼의 너비를 100%로 설정하고 좌우 여백을 추가 */
-    padding: 15px; /* 입력 폼의 안쪽 여백을 키움 */
+    width: calc(100% - 3%); /* 여백 비율 적용 */
+    padding: 2%; /* 15px -> 비율 */
     border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 18px; /* 입력 폼의 글자 크기를 키움 */
+    border-radius: 1%; /* 5px -> 비율 */
+    font-size: 1.2vw; /* 글자 크기 비율 적용 */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #4d6bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+    box-shadow: 0 0 0.8vw rgba(0, 123, 255, 0.6); /* 8px -> 비율 */
 }
 
 button {
-    width: 100%;
-    padding: 10px;
+    width: 80%;
+    padding: 2%;
     background-color: #4d6bff;
     color: #ffffff;
     border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    font-weight: bold; /* 글자를 볼드체로 설정 */
+    border-radius: 1%; /* 5px -> 비율 */
+    font-size: 1.5vw; /* 20px -> 비율 */
+    font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin: 0 auto; /* 가로 중앙 정렬 */
 }
 
 button:hover {
-    background-color: #4d6bff;
-    transform: translateY(-3px);
+    background-color: #696c7b;
+    transform: translateY(-0.5%); /* -3px -> 비율 */
 }
 
 button:active {
-    transform: translateY(1px);
+    transform: translateY(0.2%); /* 1px -> 비율 */
 }
 
 button.submitted {
-    background-color: #7f7f7f; /* 제출 후 회색으로 변경 */
-    transform: translateY(0); /* 원래 위치로 돌아감 */
+    background-color: #7f7f7f;
+    transform: translateY(0);
     transition: background-color 0.3s ease;
 }
 
@@ -154,28 +156,28 @@ button.submitted {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none; /* 기본적으로 숨김 */
+    display: none;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* 스피너와 문구를 세로로 정렬 */
-    text-align: center; /* 문구 중앙 정렬 */
-    z-index: 1000; /* 페이지 내용 위에 표시 */
+    flex-direction: column;
+    text-align: center;
+    z-index: 1000;
 }
 
 .spinner {
-    border: 16px solid #f3f3f3; /* 배경 색상 */
-    border-top: 16px solid #4d6bff; /* 스피너 색상 */
+    border: 2vw solid #f3f3f3;
+    border-top: 2vw solid #4d6bff;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 8vw;
+    height: 8vw;
     animation: spin 2s linear infinite;
 }
 
 .loading-message {
-    margin-top: 20px; /* 스피너와 문구 사이의 간격 */
-    font-size: 45px; /* 문구의 폰트 크기 조정 */
+    margin-top: 2%;
+    font-size: 3vw;
     font-weight: bold;
-    color: #ffffff; /* 문구의 색상 */
+    color: #ffffff;
 }
 
 @keyframes spin {
@@ -196,29 +198,4 @@ button.submitted {
 @keyframes growLine {
     from { width: 0; }
     to { width: 100%; }
-}
-
-/* 복사 버튼 스타일 */
-#copy-feedback {
-    position: absolute;
-    padding: 8px 12px;
-    background-color: #ffffff; /* 흰색 배경 */
-    color: #000000; /* 검정색 텍스트 */
-    border: 2px solid #000000; /* 검정색 테두리 */
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-#copy-feedback:hover {
-    background-color: #f0f0f0; /* 호버 시 배경색 변경 */
-    color: #4d6bff; /* 호버 시 텍스트 색상 변경 */
-    border-color: #333333; /* 호버 시 테두리 색상 변경 */
-}
-
-#copy-feedback:active {
-    background-color: #e0e0e0; /* 클릭 시 배경색 변경 */
-    color: #4d6bff; /* 클릭 시 텍스트 색상 변경 */
-    border-color: #000000; /* 클릭 시 테두리 색상 변경 */
 }

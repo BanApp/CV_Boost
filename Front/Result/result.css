@@ -3,11 +3,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: #f4f4f4;
+    overflow-y: hidden;
 }
 
 .top-line, .bottom-line {
@@ -29,10 +30,8 @@ body {
 .left-side, .right-side {
     width: 50%;
     height: 80%;
-    overflow: auto;
     padding: 10%; 
     box-sizing: border-box; 
-
 }
 
 .left-side {
@@ -64,22 +63,26 @@ body {
     max-width: 480px;
     width: 100%;
     background-color: #ffffff;
-    overflow-y: auto; 
     max-height: calc(100vh - 80px); 
     box-sizing: border-box; 
     animation: fadeIn 1s ease-in;
+    
 }
 
 /* 원본 자기소개서 컨테이너 스타일 */
 .left-side .container {
     border: 3px solid #4d6bff;
+    height: 60vh; /* 고정된 높이 설정 */
+    overflow-y: auto; /* 내용이 넘치면 스크롤 가능 */
 }
 
 /* 피드백 컨테이너 스타일 */
 .right-side .container {
     border: 3px solid #000000; 
     position: relative; 
-    padding-bottom: 40px; 
+    padding-bottom: 40px;
+    height: 60vh; /* 고정된 높이 설정 */
+    overflow-y: auto; /* 내용이 넘치면 스크롤 가능 */ 
 }
 
 h1 {

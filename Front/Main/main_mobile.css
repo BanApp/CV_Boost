@@ -1,0 +1,234 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+}
+
+.top-line, .bottom-line {
+    width: 100%;
+    height: 1.5vh; /* 화면 비율에 맞게 조정 */
+    background-color: #4d6bff;
+    animation: growLine 1s ease-in-out;
+}
+
+.split-container {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    background: linear-gradient(100deg, #ffffff 50%, #4d6bff 50%);
+    flex-direction: column; /* 모바일에서 세로 방향으로 변경 */
+}
+
+.left-side, .right-side {
+    width: 100%;
+    height: 50%; /* 모바일에서 세로 방향으로 조정 */
+}
+
+.left-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column; /* 모바일에서 세로 방향으로 변경 */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    height: 70%;
+}
+
+.animated-image {
+    max-width: 80%; /* 화면 비율에 맞게 조정 */
+    max-height: 60%; /* 화면 비율에 맞게 조정 */
+    margin-bottom: 5%; /* 화면 비율에 맞게 조정 */
+    animation: moveImage 3s ease-in-out infinite;
+}
+
+.service-description {
+    font-size: 8vw; /* 화면 비율에 맞게 조정 */
+    font-weight: bold;
+    color: #000;
+    margin-top: 2%; /* 화면 비율에 맞게 조정 */
+}
+
+.additional-info {
+    font-size: 4vw; /* 화면 비율에 맞게 조정 */
+    font-weight: bold;
+    color: #000;
+    margin-top: 4%;
+    line-height: 1.5;
+}
+
+.right-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 4% 6%; /* 화면 비율에 맞게 조정 */
+    border-radius: 2%; /* 화면 비율에 맞게 조정 */
+    box-shadow: 0 0.5vw 1.5vw rgba(0, 0, 0, 0.1); /* 화면 비율에 맞게 조정 */
+    max-width: 80vw; /* 화면 비율에 맞게 조정 */
+    width: 90%;
+    background-color: #ffffff;
+    animation: fadeIn 1s ease-in;
+    border: 2px solid black; /* 두께 2px, 검정색 테두리 */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 4%;
+}
+
+.form-group {
+    margin-bottom: 4%;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 2%;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 2%;
+    border: 1px solid #ddd;
+    border-radius: 2%; /* 화면 비율에 맞게 조정 */
+    font-size: 1.5vw; /* 화면 비율에 맞게 조정 */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4d6bff;
+    box-shadow: 0 0 1vw rgba(0, 123, 255, 0.6); /* 화면 비율에 맞게 조정 */
+}
+
+.feedback-button {
+    width: 80%; /* 버튼의 너비를 부모 요소의 80%로 설정 */
+    padding: 2%;
+    background-color: #4d6bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5%; /* 화면 비율에 맞게 조정 */
+    font-size: 2vw; /* 화면 비율에 맞게 조정 */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.feedback-button img {
+    width: 36px; /* 이미지 크기 조정 */
+    height: 36px; /* 이미지 크기 조정 */
+}
+
+.feedback-button:hover {
+    background-color: #696c7b;
+    transform: translateY(-0.5%);
+}
+
+.feedback-button:active {
+    transform: translateY(0.2%);
+}
+
+.feedback-button.submitted {
+    background-color: #7f7f7f;
+    transform: translateY(0);
+    transition: background-color 0.3s ease;
+}
+
+/* 로딩 오버레이 스타일 */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 2vw solid #f3f3f3;
+    border-top: 2vw solid #4d6bff;
+    border-radius: 50%;
+    width: 8vw;
+    height: 8vw;
+    animation: spin 2s linear infinite;
+}
+
+.loading-message {
+    margin-top: 2%;
+    font-size: 4vw; /* 화면 비율에 맞게 조정 */
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.icon {
+    width: 10vh; /* 조정 가능한 크기 */
+    height: 10vh; /* 조정 가능한 크기 */
+    margin-top: 4vh;
+}
+
+.linked-icon {
+    width: 3vh;  /* 매우 작은 크기 */
+    height: 3vh; /* 매우 작은 크기 */
+}
+
+.github-icon {
+    width: 20vh;  /* 매우 작은 크기 */
+    height: 10vh; /* 매우 작은 크기 */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes moveImage {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes growLine {
+    from { width: 0; }
+    to { width: 100%; }
+}

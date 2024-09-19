@@ -7,27 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 초기화면으로 돌아가기 버튼 클릭 이벤트
     document.getElementById('go-back').addEventListener('click', function() {
-        window.location.href = '../Main/main.html'; // 초기화면으로 이동
+        window.location.href = '/'; // 초기화면으로 이동
     });
 
     // 저장하기 버튼 클릭 이벤트
     document.getElementById('save-feedback').addEventListener('click', function() {
-        const job = document.getElementById('job').innerText;
-        const question = document.getElementById('question').innerText;
-        const answer = document.getElementById('answer').innerText;
-        const feedback = document.getElementById('feedback').innerText;
-
-        const feedbackData = {
-            job: job,
-            question: question,
-            answer: answer,
-            feedback: feedback
-        };
-
-        // 피드백 데이터를 JSON 형식으로 저장 (이 예시에서는 파일 저장 기능을 대신하여 콘솔에 표시)
-        console.log('저장된 피드백:', JSON.stringify(feedbackData));
-
-        alert('피드백이 성공적으로 저장되었습니다!');
+        window.open('https://huggingface.co/BanAPP/gemma2-2b-kor-resume-feedback','_blank'); // 초기화면으로 이동
     });
 
     // 피드백 복사 버튼 클릭 이벤트

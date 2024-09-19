@@ -1,0 +1,146 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* 전체 화면을 사용하도록 변경 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(100deg, #ffffff 50%, #4d6bff 50%);
+    overflow-y: auto; /* 스크롤이 필요할 수 있으므로 overflow-y: auto로 변경 */
+}
+
+.top-line, .bottom-line {
+    width: 100%;
+    height: 2%; /* 높이를 조금 더 키워서 모바일 화면에서 잘 보이게 설정 */
+    background-color: #4d6bff;
+    animation: growLine 1s ease-in-out;
+}
+
+.split-container {
+    display: flex;
+    flex-direction: column; /* 모바일에서는 세로 레이아웃이 더 적합 */
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    
+    padding: 0%; 
+    box-sizing: border-box;
+    margin-top: 8vh; /* 상단 버튼과 컨테이너 제목 간의 여백 확보 */
+    margin-bottom: 5vh; /* 하단 버튼과 컨테이너 내용 간의 여백 확보 */
+    position: relative; /* 버튼을 컨테이너 내에 위치시키기 위한 설정 */
+    overflow: hidden; /* 컨테이너의 내용이 넘치지 않도록 숨김 */
+}
+
+.left-side, .right-side {
+    width: 100%; /* 모바일에서는 가로폭을 100%로 설정 */
+    height: auto; /* 높이는 내용에 따라 자동으로 조정 */
+    padding: 5%; /* 패딩을 줄여서 화면을 최대한 활용하도록 설정 */
+    box-sizing: border-box;
+    position: relative; /* 버튼을 컨테이너 내에 위치시키기 위한 설정 */
+}
+
+.left-title, .right-title {
+    font-size: 4vw; /* 화면 크기에 비례하도록 폰트 사이즈 조정 */
+    font-weight: bold;
+    margin-bottom: 4%; /* 모바일 화면에서 여유 있는 여백 */
+    color: #000000;
+    text-align: center;
+}
+
+/* 컨테이너 내 위치 조정 */
+.container {
+    padding: 4%;
+    border-radius: 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    max-height: 60vh; /* 모바일 화면에서의 최대 높이 조정 */
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in;
+    position: relative; /* 버튼을 컨테이너 내에 고정시키기 위한 설정 */
+}
+
+/* 원본 자기소개서 컨테이너 스타일 */
+.left-side .container {
+    border: 3px solid #4d6bff;
+    height: auto; /* 내용에 따라 자동으로 조정 */
+    overflow-y: auto; /* 내용이 넘치면 스크롤 가능 */
+}
+
+/* 피드백 컨테이너 스타일 */
+.right-side .container {
+    border: 3px solid #000000;
+    padding-bottom: 40px;
+    height: auto; /* 내용에 따라 자동으로 조정 */
+    overflow-y: auto; /* 내용이 넘치면 스크롤 가능 */
+}
+
+/* 상단 버튼 컨테이너 스타일 */
+.top-buttons {
+    position: absolute; /* 컨테이너 내에서 절대 위치로 설정 */
+    top: 3vh;
+    right: 2vw;
+    display: flex;
+    gap: 3vw;
+    z-index: 1000; /* 버튼이 컨테이너 위에 위치하도록 설정 */
+}
+
+/* 상단 버튼 스타일 */
+.top-buttons button {
+    padding: 1vw 2vw; /* 모바일에서 버튼의 패딩 조정 */
+    min-width: 6rem;
+    max-width: 6rem;
+    min-height: 3rem;
+    max-height: 3rem;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 8%;
+    font-size: 3vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.top-buttons button:hover {
+    border-color: #333333;
+    color: #4d6bff;
+}
+
+.top-buttons button:active {
+    background-color: #e0e0e0;
+    border-color: #000000;
+}
+
+/* 하단 복사 버튼 스타일 */
+#copy-feedback {
+    position: absolute; /* 컨테이너 내에서 절대 위치로 설정 */
+    bottom: -3vh; /* 화면 하단에 위치하도록 설정 */
+    right: 5vw;  /* 화면 오른쪽에 위치하도록 설정 */
+    padding: 1vw 2vw;
+    min-width: 6rem;
+    max-width: 6rem;
+    min-height: 3rem;
+    max-height: 3rem;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 8%;
+    font-size: 3vw;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+#copy-feedback:hover {
+    background-color: #f0f0f0;
+    color: #4d6bff;
+    border-color: #333333;
+}
+
+#copy-feedback:active {
+    background-color: #e0e0e0;
+    color: #4d6bff;
+    border-color: #000000;
+}

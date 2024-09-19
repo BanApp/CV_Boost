@@ -4,7 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자기소개서 피드백 결과</title>
-    <link rel="stylesheet" href="result.css">
+    <script>
+        // 화면 크기를 감지하여 적절한 CSS 파일을 설정하는 함수
+        function getStylesheet() {
+            if (window.innerWidth <= 768) {
+                return 'result_mobile.css'; // 모바일용 CSS
+            } else {
+                return 'result.css'; // PC용 CSS
+            }
+        }
+        // 페이지가 로드된 후 적절한 CSS 파일을 동적으로 추가
+        window.addEventListener('load', function() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = getStylesheet();
+            document.head.appendChild(link);
+        });
+    </script>
 </head>
 <body>
     <div class="top-line"></div>
@@ -45,7 +61,7 @@
                     </div>
                 </div>
                 <!-- 복사 버튼 추가 -->
-                 <br>
+                <br>
                 <button id="copy-feedback">피드백 복사</button>
             </div>
         </div>

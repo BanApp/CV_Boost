@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -28,6 +28,8 @@ body {
 .left-side, .right-side {
     width: 100%;
     height: 50%; /* 모바일에서 세로 방향으로 조정 */
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 .left-side {
@@ -56,14 +58,14 @@ body {
 }
 
 .service-description {
-    font-size: 8vw; /* 화면 비율에 맞게 조정 */
+    font-size: 12vw; /* 화면 비율에 맞게 조정 */
     font-weight: bold;
     color: #000;
     margin-top: 2%; /* 화면 비율에 맞게 조정 */
 }
 
 .additional-info {
-    font-size: 4vw; /* 화면 비율에 맞게 조정 */
+    font-size: 5vw; /* 화면 비율에 맞게 조정 */
     font-weight: bold;
     color: #000;
     margin-top: 4%;
@@ -113,6 +115,7 @@ h1 {
     font-size: 1.5vw; /* 화면 비율에 맞게 조정 */
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .form-group input:focus,
 .form-group textarea:focus {
@@ -200,7 +203,7 @@ h1 {
 .icon {
     width: 10vh; /* 조정 가능한 크기 */
     height: 10vh; /* 조정 가능한 크기 */
-    margin-top: 4vh;
+    margin-top: 2vh;
 }
 
 .linked-icon {

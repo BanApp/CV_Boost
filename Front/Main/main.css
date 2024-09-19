@@ -64,7 +64,7 @@ body {
 .additional-info {
     font-size: 1.5vw; /* 24px을 화면 비율에 맞게 변경 */
     font-weight: bold;
-    color: #333;
+    color: #000;
     margin-top: 3%;
     line-height: 1.5;
 }

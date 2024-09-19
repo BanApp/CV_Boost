@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자기소개서 작성</title>
-    <link rel="stylesheet" href="main.css">
+    <script>
+        // 화면 크기를 감지하여 적절한 CSS 파일을 설정하는 함수
+        function getStylesheet() {
+            if (window.innerWidth <= 768) {
+                return 'main_mobile.css'; // 모바일용 CSS
+            } else {
+                return 'main.css'; // PC용 CSS
+            }
+        }
+
+        // 페이지가 로드되기 전에 적절한 CSS 파일을 설정
+        document.write('<link id="stylesheet" rel="stylesheet" href="' + getStylesheet() + '">');
+    </script>
 </head>
 <body>
     <div class="top-line"></div>
@@ -14,8 +26,8 @@
                 <img src="cv_boost.png" alt="움직이는 이미지" class="animated-image">
                 <div class="service-description">CV Boost 소개</div>
                 <p class="additional-info">
-                    Gemma2 AI와 잡코리아의 자기소개서 데이터를 기반으로,<br>
-                    자기소개서 피드백을 제공합니다.
+                    Gemma2 AI와 잡코리아 데이터를 활용하여,<br>
+                    자기소개서에 대한 피드백을 제공합니다.
                 </p>
                 <div class="social-icons">
                     <a href="https://www.linkedin.com/in/minjun-jung-21339b233" target="_blank">
@@ -58,7 +70,7 @@
     <!-- 로딩 오버레이 추가 -->
     <div id="loading-overlay">
         <div class="spinner"></div>
-        <div class="loading-message">Gemma2가 자기소개서를 분석중입니다.<br>잠시만 기다려 주세요...</div>
+        <div class="loading-message">AI가 자기소개서를 분석중입니다.<br>잠시만 기다려 주세요...</div>
     </div>
     <script src="main.js"></script>
 </body>
